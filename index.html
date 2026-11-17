@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Primary Meta Tags -->
-  <meta name="title" content="Distributed 3D Leader-Follower Formation Control with Field-of-View Safety via CBFs">
-  <meta name="description" content="A distributed perception-aware 3D leader-follower formation control framework that uses a CBF-QP safety filter to keep the leader inside the follower's camera FOV at all times.">
-  <meta name="keywords" content="Multi-UAV systems, distributed control, 3D leader-follower formation, field-of-view constraints, control barrier functions, CBF-QP, perception-aware control, Crazyflie">
+  <meta name="title" content="Dynamic Relative-Motion and Frustum-Safe Tracking for Distributed 3D UAV Formations">
+  <meta name="description" content="A distributed perception-aware 3D leader-follower formation framework combining relative 3D kinematics, an asynchronous EKF for delayed AprilTag measurements, and an estimation-aware CBF-QP that keeps the leader inside the follower's camera frustum.">
+  <meta name="keywords" content="Multi-UAV systems, distributed control, 3D leader-follower formation, field-of-view constraints, control barrier functions, CBF-QP, perception-aware control, asynchronous EKF, AprilTag, ModalAI Seeker">
   <meta name="author" content="Immanuel R. Santjoko, Richie R. Suganda, Miao Pan, Bin Hu">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
@@ -15,23 +15,23 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="NAIL Lab — University of Houston">
-  <meta property="og:title" content="Distributed 3D Leader-Follower Formation Control with Field-of-View Safety via CBFs">
-  <meta property="og:description" content="A distributed perception-aware 3D leader-follower formation control framework that uses a CBF-QP safety filter to keep the leader inside the follower's camera FOV at all times.">
+  <meta property="og:title" content="Dynamic Relative-Motion and Frustum-Safe Tracking for Distributed 3D UAV Formations">
+  <meta property="og:description" content="A distributed perception-aware 3D leader-follower formation framework combining relative 3D kinematics, an asynchronous EKF for delayed AprilTag measurements, and an estimation-aware CBF-QP that keeps the leader inside the follower's camera frustum.">
   <meta property="og:url" content="https://research.noelsadventure.my.id/">
-  <meta property="og:image" content="https://research.noelsadventure.my.id/static/images/intro2.png">
-  <meta property="og:image:alt" content="Perception-aware leader-follower safe control: baseline vs proposed method">
+  <meta property="og:image" content="https://research.noelsadventure.my.id/static/images/Control_Architecture.png">
+  <meta property="og:image:alt" content="Perception-aware 3D-LFF control architecture">
   <meta property="article:section" content="Research">
   <meta property="article:tag" content="Control Barrier Functions">
   <meta property="article:tag" content="Multi-UAV Formation Control">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Distributed 3D Leader-Follower Formation Control with FOV Safety via CBFs">
-  <meta name="twitter:description" content="Perception-aware safe 3D-LFF control: a CBF-QP filter that keeps the leader inside the follower's camera frustum during aggressive maneuvers.">
-  <meta name="twitter:image" content="https://research.noelsadventure.my.id/static/images/intro2.png">
+  <meta name="twitter:title" content="Dynamic Relative-Motion and Frustum-Safe Tracking for Distributed 3D UAV Formations">
+  <meta name="twitter:description" content="Perception-aware 3D-LFF control with an estimation-aware CBF-QP filter that keeps the leader inside the follower's camera frustum under delayed, noisy vision feedback.">
+  <meta name="twitter:image" content="https://research.noelsadventure.my.id/static/images/Control_Architecture.png">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="Distributed 3D Leader-Follower Formation Control with Field-of-View Safety via Control Barrier Functions">
+  <meta name="citation_title" content="Dynamic Relative-Motion and Frustum-Safe Tracking for Distributed 3D UAV Formations">
   <meta name="citation_author" content="Santjoko, Immanuel R.">
   <meta name="citation_author" content="Suganda, Richie R.">
   <meta name="citation_author" content="Pan, Miao">
@@ -51,7 +51,7 @@
   <link rel="preconnect" href="https://ajax.googleapis.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-  <title>Distributed 3D Leader-Follower Formation Control with FOV Safety via CBFs</title>
+  <title>Dynamic Relative-Motion and Frustum-Safe Tracking for Distributed 3D UAV Formations</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="static/images/icon.png">
@@ -99,8 +99,8 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "Distributed 3D Leader-Follower Formation Control with Field-of-View Safety via Control Barrier Functions",
-    "description": "A distributed perception-aware 3D leader-follower formation control framework that uses a CBF-QP safety filter to keep the leader inside the follower's camera FOV at all times.",
+    "headline": "Dynamic Relative-Motion and Frustum-Safe Tracking for Distributed 3D UAV Formations",
+    "description": "A distributed perception-aware 3D leader-follower formation framework combining relative 3D kinematics, an asynchronous EKF for delayed AprilTag measurements, and an estimation-aware CBF-QP that keeps the leader inside the follower's camera frustum.",
     "author": [
       { "@type": "Person", "name": "Immanuel R. Santjoko", "url": "https://noelsadventure.my.id",
         "affiliation": { "@type": "Organization", "name": "Department of Electrical and Computer Engineering, University of Houston" } },
@@ -117,8 +117,8 @@
       "name": "Under Review"
     },
     "url": "https://research.noelsadventure.my.id/",
-    "image": "https://research.noelsadventure.my.id/static/images/intro2.png",
-    "keywords": ["multi-UAV systems", "distributed control", "control barrier functions", "perception-aware control", "leader-follower formation"],
+    "image": "https://research.noelsadventure.my.id/static/images/Control_Architecture.png",
+    "keywords": ["multi-UAV systems", "distributed control", "control barrier functions", "perception-aware control", "leader-follower formation", "asynchronous EKF", "AprilTag"],
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
@@ -138,7 +138,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Distributed 3D Leader-Follower Formation Control with Field-of-View Safety via Control Barrier Functions</h1>
+          <h1 class="title is-1 publication-title">Dynamic Relative-Motion and Frustum-Safe Tracking for Distributed 3D UAV Formations</h1>
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">
@@ -193,17 +193,18 @@
       </div>
     </section>
 
-  <!-- Teaser YouTube video -->
+  <!-- Teaser video -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/cK3tFkGduiA?rel=0&amp;showinfo=0"
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <video controls muted loop playsinline preload="metadata">
+              <source src="static/videos/VIDEO_3DLFF.mp4" type="video/mp4">
+            </video>
           </div>
           <h2 class="subtitle has-text-centered">
-            Demonstration of the proposed perception-aware safe control framework: the follower autonomously maintains the leader within its camera Field-of-View (FOV) despite conflicting formation commands.
+            Overview of the proposed framework: followers track time-varying 3D formations from onboard AprilTag feedback while an estimation-aware CBF-QP keeps the leader inside the camera frustum.
           </h2>
         </div>
       </div>
@@ -218,7 +219,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              This letter proposes a distributed 3D leader-follower formation (3D-LFF) control framework for multi-UAV systems that achieves formation tracking while enforcing perception safety constraints. Maintaining safe, vision-based 3D-LFF is challenging because onboard cameras impose strict Field-of-View (FOV) limitations, and demanding formation commands can drive the leader outside the follower's camera frustum, resulting in loss of visibility. To address this issue, we develop a perception-aware safe control architecture that guarantees visibility by construction. First, we derive a relative kinematic model in a line-of-sight coordinate representation and design a distributed 3D-LFF tracking controller using only locally available relative states. Next, we embed the nominal formation controller within a Control Barrier Function-based Quadratic Program (CBF-QP) safety filter that minimally modifies the commanded velocities to maintain the leader inside the follower's camera frustum while preserving formation tracking whenever feasible. Gazebo simulations and <a href="https://www.bitcraze.io/products/crazyflie-2-1-brushless/" target="_blank" rel="noopener noreferrer">Crazyflie</a> hardware experiments validate the proposed approach, demonstrating accurate formation tracking and effective FOV enforcement, including scenarios in which the nominal desired formation conflicts with visibility constraints.
+              Vision-based leader-follower formation control requires tracking formations while preserving visual feedback despite coupled UAV motion, limited camera visibility, and delayed measurements. This letter presents a distributed perception-aware 3D leader-follower formation (3D-LFF) framework for multi-UAV systems. We derive relative 3D kinematics that explicitly account for the follower's full attitude and both UAVs' motion. A distributed controller based on feedback linearization uses these kinematics and communicated leader motion to track time-varying formations. The controller receives relative-state feedback from an asynchronous EKF, which incorporates delayed AprilTag measurements at their acquisition times and propagates the corrected estimate to the current control time. To preserve visual feedback, an estimation-aware control barrier function (CBF)-QP safety filter minimally modifies the controller's commands to enforce horizontal and vertical camera Field-of-View (FOV) and sensing-depth limits. Hardware experiments demonstrate 36.7&ndash;54.2% lower formation-tracking RMSE than a visual-servoing baseline. Under safety-conflicting formation references, the estimation-aware CBF preserves leader visibility, whereas both the standard CBF without uncertainty margins and the unfiltered baseline lose visibility. Gazebo simulations demonstrate distributed operation with 21 UAVs.
             </p>
           </div>
         </div>
@@ -233,23 +234,18 @@
         <div class="column is-full-width">
           <h2 class="title is-3 has-text-centered">Introduction and System Formulation</h2>
 
-          <div class="has-text-centered" style="margin-top: 20px; margin-bottom: 30px;">
-            <img src="static/images/intro2.png" alt="Perception-aware leader-follower safe control: comparison between baseline and proposed method" loading="lazy" style="max-width: 65%;">
-            <p class="figure-caption"><em>Perception-aware leader-follower safe control. Without perception constraints, the baseline follower (NoCBF, red) loses sight of the leader during maneuvers. In contrast, the proposed CBF-equipped follower (CBF, blue) actively modifies its commanded velocities to ensure the leader remains strictly within its camera's FOV.</em></p>
-          </div>
-
           <div class="content has-text-justified">
             <p>
-              In multi-UAV systems operating in GPS-denied environments, formation performance depends critically on the follower's ability to estimate the leader's relative state using onboard sensing. This introduces an intrinsic perception constraint: the leader must remain inside the follower's camera frustum to maintain continuous visibility and avoid degradation or loss of relative-state estimation. Failure to maintain this condition creates a direct conflict between formation objectives and sensing limitations.
+              In GPS-denied environments, followers must estimate the leader's relative state using onboard sensing. With a body-fixed camera, the leader must stay within the camera's limited field of view and sensing depth, yet the motion and attitude of both UAVs continuously change their camera-relative geometry. Aggressive maneuvers or desired formation changes can therefore drive the leader out of the camera frustum and eliminate the relative-state feedback the controller depends on.
             </p>
             <p>
-              Our framework models the underlying geometry using a <strong>3D line-of-sight coordinate representation</strong>, capturing the camera-to-leader distance, azimuth, and elevation angles, along with the relative heading. This representation enables the camera's Field-of-View (FOV) limits and depth range to be expressed as a well-defined perception safe set, and provides the geometric foundation for both the distributed tracking controller and the safety filter.
+              Our framework models this geometry with <strong>augmented 3D line-of-sight coordinates</strong> (range, azimuth, elevation, and relative heading) that retain the follower's full attitude and camera offset and incorporate both UAVs' motion. The same representation supports the distributed tracking controller, the asynchronous state estimator, and the camera-frustum safety constraints.
             </p>
           </div>
 
           <div class="has-text-centered" style="margin-top: 20px; margin-bottom: 20px;">
-            <img src="static/images/diagrammmm.png" alt="Leader-follower geometry and camera frustum" loading="lazy" style="max-width: 50%;">
-            <p class="figure-caption"><em>System geometry. The leader's position relative to the follower's camera is expressed in spherical coordinates (distance, azimuth, elevation) and augmented with the relative heading. The magenta region depicts the camera frustum defined by depth bounds and FOV angles.</em></p>
+            <img src="static/images/Geometry.png" alt="Leader-follower relative geometry and camera frustum" loading="lazy" style="max-width: 50%;">
+            <p class="figure-caption"><em>Leader&ndash;follower relative geometry and camera frustum. The leader position \( \mathbf{q}_{ij} \) is represented by range \( L_{ij} \), azimuth \( \phi_{ij} \), elevation \( \xi_{ij} \), and relative heading \( \alpha_{ij} \). The camera frustum is defined by FOV angles \( (\Phi, \Theta) \) and depth limits \( [x_{\mathrm{near}}, x_{\mathrm{far}}] \).</em></p>
           </div>
         </div>
       </div>
@@ -270,7 +266,7 @@
                 </span>
                 <h4 class="title is-5 mt-3">3D Kinematic Model &amp; Control</h4>
                 <p class="is-size-6">
-                  A relative 3D kinematic model in spherical coordinates that yields a 3D leader-follower formation (3D-LFF) control law relying on local relative measurements and distributed leader states.
+                  Relative 3D kinematics that account for the follower's full attitude, camera offset, and both UAVs' motion, enabling a feedback-linearization controller that tracks time-varying formations using communicated leader motion.
                 </p>
               </div>
             </div>
@@ -279,9 +275,9 @@
                 <span class="icon is-large has-text-info">
                   <i class="fas fa-shield-alt fa-2x"></i>
                 </span>
-                <h4 class="title is-5 mt-3">Real-Time Safety Filter</h4>
+                <h4 class="title is-5 mt-3">Estimation-Aware Safety</h4>
                 <p class="is-size-6">
-                  A real-time CBF-QP safety filter that enforces the follower's camera frustum limits by minimally modifying the nominal formation commands, thereby guaranteeing continuous visibility while preserving tracking whenever feasible.
+                  An asynchronous EKF fuses delayed AprilTag measurements, and a CBF-QP safety filter with an uncertainty margin derived from the estimator covariance enforces the FOV and depth limits under estimation error.
                 </p>
               </div>
             </div>
@@ -292,7 +288,7 @@
                 </span>
                 <h4 class="title is-5 mt-3">Experimental Validation</h4>
                 <p class="is-size-6">
-                  Validation in Gazebo simulations and Crazyflie hardware experiments, demonstrating reliable formation tracking and strict FOV enforcement, including scenarios where the desired formation is incompatible with visibility constraints.
+                  Onboard ModalAI Seeker experiments show 36.7&ndash;54.2% lower tracking RMSE than IBVS and preserved visibility under conflicting references, and a Gazebo simulation demonstrates 21-UAV distributed operation.
                 </p>
               </div>
             </div>
@@ -310,11 +306,14 @@
           <h2 class="title is-3 has-text-centered">Methodology</h2>
           <div class="content has-text-justified">
             <div class="has-text-centered" style="margin-top: 20px; margin-bottom: 20px;">
-              <img src="static/images/architecture4.png" alt="Perception-Aware Safe Leader-Follower Control Architecture" loading="lazy" style="max-width: 100%;">
-              <p class="figure-caption"><em>Perception-aware safe 3D-LFF control architecture. A high-level distributed 3D-LFF controller tracks the desired state \( \mathbf{x}_{ij}^{d}(t) \) to generate the nominal command \( \mathbf{u}_{i}^{\mathrm{nom}} \). A perception-aware safety filter modifies \( \mathbf{u}_{i}^{\mathrm{nom}} \) to enforce visibility constraints \( \Gamma_c \) via a CBF-QP, outputting the safe command \( \mathbf{u}_{i}^{\mathrm{safe}} \) that keeps the leader inside the perception safe set \( \mathcal{S}_{ij}^{\mathbf{q}} \). A low-level velocity controller then tracks \( \mathbf{u}_{i}^{\mathrm{safe}} \) for the full quadrotor dynamics.</em></p>
+              <img src="static/images/Control_Architecture.png" alt="Perception-aware 3D-LFF control architecture" loading="lazy" style="max-width: 100%;">
+              <p class="figure-caption"><em>Perception-aware 3D-LFF control architecture. A distributed 3D-LFF formation controller tracks the desired state \( \mathbf{x}_{ij}^{d}(t) \) to generate the nominal command \( \mathbf{u}_{i}^{\mathrm{nom}} \). An estimation-aware safety filter modifies \( \mathbf{u}_{i}^{\mathrm{nom}} \) to enforce camera-frustum constraints \( \Gamma_c \) via a CBF-QP, outputting the safe command \( \mathbf{u}_{i}^{\mathrm{safe}} \) that keeps the leader inside the perception safe set \( \mathcal{S}_{ij}^{\mathbf{q}} \). A low-level velocity controller then tracks \( \mathbf{u}_{i}^{\mathrm{safe}} \) for the full quadrotor dynamics, with relative-state feedback from a distributed estimator.</em></p>
             </div>
             <p>
-              The proposed perception-aware safe 3D-LFF control framework employs a hierarchical architecture: an outer loop generates safe velocity commands, which are subsequently tracked by an inner-loop velocity controller handling the full-order system dynamics. This outer loop utilizes a cascaded two-stage design. First, a nominal formation controller is designed based on the relative 3D-LFF kinematics to track the desired formation, generating a nominal velocity command. To guarantee perception safety, this nominal velocity command is subsequently processed through a CBF-QP safety filter, which computes a minimally modified safe velocity command that ensures the forward invariance of the perception safe set while deviating minimally from the tracking objective.
+              The framework employs a hierarchical architecture: an outer loop generates safe velocity and yaw-rate commands that an inner-loop velocity controller tracks on the full-order dynamics. A distributed controller based on feedback linearization uses the relative 3D kinematics, local ego states, and communicated leader motion to produce a nominal command. Relative-state feedback comes from an <strong>asynchronous EKF</strong> that applies delayed, low-rate AprilTag measurements at their acquisition times and replays the corrected estimate to the current control time.
+            </p>
+            <p>
+              The nominal command is then passed through an <strong>estimation-aware CBF-QP</strong>. Each camera-frustum constraint (horizontal and vertical FOV, near and far depth) is tightened by a margin computed from the estimator's uncertainty, so visibility is preserved even though the safety filter acts on estimated rather than true states.
             </p>
           </div>
         </div>
@@ -327,17 +326,12 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Experiments</h2>
       <p class="content">
-        The proposed framework is evaluated on three platforms: a Python-based numerical simulation, a Gazebo simulator, and a physical hardware platform using the Crazyflie 2.1 quadrotor. For a direct comparative analysis, the multi-robot system comprises one leader and two followers: one without the safety filter (<strong>NoCBF</strong>), and the other with the safety filter (<strong>CBF</strong>).
+        We evaluate the framework in a Gazebo simulation of distributed formation control and in hardware experiments on ModalAI Seeker quadrotors (onboard Snapdragon 821, PX4 velocity control). AprilTag measurements arrive at 10&nbsp;Hz from 640&times;480 images, with camera FOV angles of 56&deg; and 42&deg; and depth limits of 0.5&ndash;1.5&nbsp;m. OptiTrack provides ground truth for evaluation only.
       </p>
 
       <p class="content">
-        To analyze the effectiveness of the safety filter, the evaluation task is divided into a <strong>three-stage task</strong>:
+        The numerical and CrazySim studies use one leader and two followers: one without the safety filter (<strong>NoCBF</strong>) and one with it (<strong>CBF</strong>). The evaluation task is a <strong>three-stage task</strong>: Stage&nbsp;1 is the nominal condition with no safety conflict; Stage&nbsp;2 introduces a safety-conflicting formation; Stage&nbsp;3 removes the conflict so the followers converge back to their nominal formation.
       </p>
-      <ul class="content">
-        <li><strong>Stage 1:</strong> Represents the nominal condition where no safety conflict exists.</li>
-        <li><strong>Stage 2:</strong> Introduces a safety-conflicting formation, evaluating the system's ability to maintain the leader within the perception safe set.</li>
-        <li><strong>Stage 3:</strong> Removes the safety conflict, allowing the followers to converge back to their nominal formation objectives.</li>
-      </ul>
 
       <hr>
       <h3 class="title is-4 has-text-centered">Python numerical simulation</h3>
@@ -356,7 +350,7 @@
       </div>
 
       <hr>
-      <h3 class="title is-4 has-text-centered">Gazebo Simulation</h3>
+      <h3 class="title is-4 has-text-centered">Gazebo Simulation (CrazySim, Crazyflie)</h3>
       <div class="columns is-centered is-vcentered mt-4">
         <div class="column is-half">
           <img src="static/images/scenario.png" alt="Top view of the cave navigation scenario" loading="lazy" />
@@ -386,36 +380,54 @@
         During Stage 2, the formation expansion introduces a conflict between formation and perception safety objectives. The proposed CBF-QP framework dynamically prioritizes safety, intervening to ensure the leader remains strictly within the perception safe set. The NoCBF baseline fails to adapt, resulting in severe safety violations. In Stage 3, the conflict is removed, and both followers are able to converge to their nominal formation objectives.
       </p>
 
+
       <hr>
-      <h3 class="title is-4 has-text-centered">Crazyflie Hardware Experiment</h3>
-
-      <div class="columns is-centered is-vcentered mt-4">
-        <div class="column is-half">
-          <img src="static/images/topview.png" alt="Top view of the hardware experiment trajectory" loading="lazy" />
-          <p class="figure-caption"><em>Top-down view of the leader and follower trajectories during real flight.</em></p>
-        </div>
-      </div>
-
-      <p class="content mt-4">
-        The hardware experiments validate the proposed framework under real-world flight conditions on <strong>Crazyflie 2.1</strong> quadrotors, capturing the effects of unmodeled aerodynamic drag, communication latency, and actuator noise. To rigorously stress-test the proposed method, the leader is commanded to track a yaw-modulated lemniscate trajectory. A motion-capture system provides global poses to emulate ideal relative measurements and isolate the contribution of the control and safety filter layers.
+      <h3 class="title is-4 has-text-centered">Gazebo Simulation: 21 UAVs</h3>
+      <p class="content">
+        We simulate 21 X500 quadrotors in Gazebo with PX4 SITL: one root leader and 20 followers arranged in three hierarchical tiers of 4, 8, and 8 UAVs. The root leader flies a lemniscate at 1.5&nbsp;m/s while the formation continuously expands, contracts, and rotates into a dynamic conical configuration. Each follower tracks its immediate parent using only the derived relative kinematics and communicated parent motion. Tracking RMSE grows from 0.53&nbsp;m in Tier&nbsp;1 to 1.39&nbsp;m in Tier&nbsp;3, yet the formation remains coherent throughout. Without the CBF, nominal tracking drives the parent outside a follower's vertical FOV; with the CBF, the follower modifies its command to preserve visibility.
       </p>
 
       <div class="columns is-centered is-vcentered mt-4">
         <div class="column is-8">
           <video autoplay controls muted loop playsinline width="100%" preload="metadata">
-            <source src="static/videos/Experiment-compressed-low.mp4" type="video/mp4">
+            <source src="static/videos/formation_chase_topdown_tier.mp4" type="video/mp4">
           </video>
-          <p class="figure-caption"><em>Hardware flight video.</em></p>
+          <p class="figure-caption"><em>Gazebo simulation with 21 UAVs in three hierarchical tiers (top-down view).</em></p>
         </div>
+      </div>
 
-        <div class="column is-4">
-          <img src="static/images/exp_shorten.png" alt="Hardware Experiment Quantitative Results" loading="lazy" style="max-width: 100%; margin: 0 auto; display: block;" />
-          <p class="figure-caption"><em>Quantitative results: the CBF follower (blue) stays inside the safe region; the baseline (red) does not.</em></p>
+      <hr>
+      <h3 class="title is-4 has-text-centered">Hardware: Estimation and Tracking</h3>
+      <p class="content">
+        In a 3D triangular maneuver with one leader and one follower, the asynchronous EKF reduces the estimation RMSE of range, azimuth, elevation, and relative heading by 12.5%, 65.6%, 38.9%, and 32.5% relative to raw AprilTag measurements, compensating delay and correcting the drift of pure model propagation. We then compare against a perception-aware IBVS baseline at 20&nbsp;Hz. Omitting leader motion already cuts tracking RMSE by 14.2&ndash;32.8%; incorporating communicated leader motion reduces RMSE by 42.0%, 54.2%, 36.7%, and 43.0% across the four relative states. The 95th-percentile computation time is 0.832&nbsp;ms versus 11.770&nbsp;ms for IBVS (a 92.9% reduction), and IBVS fails during rapid catch-up after accumulating tracking lag.
+      </p>
+
+      <div class="columns is-centered is-vcentered mt-4">
+        <div class="column is-8">
+          <video autoplay controls muted loop playsinline width="100%" preload="metadata">
+            <source src="static/videos/TrackingExp.mp4" type="video/mp4">
+          </video>
+          <p class="figure-caption"><em>Hardware formation-tracking experiment on ModalAI Seeker quadrotors.</em></p>
+        </div>
+      </div>
+
+      <hr>
+      <h3 class="title is-4 has-text-centered">Hardware: Perception Safety</h3>
+      <p class="content">
+        A yaw-modulated double-lemniscate maneuver with one leader and two followers in a V-shaped formation tests perception safety through a <strong>three-stage task</strong> that introduces and then removes a conflict with the horizontal and vertical FOV constraints. We compare three configurations that share the same estimator, nominal controller, and QP parameters: <strong>NoCBF</strong>, a <strong>standard CBF</strong> (no uncertainty margin), and the <strong>estimation-aware CBF</strong>. As the desired formation approaches the vertical FOV boundary, both NoCBF and the standard CBF violate the constraint and lose the leader. The estimation-aware CBF keeps its barrier values nonnegative and the leader visible throughout, with all slack variables remaining at zero, and nominal tracking resumes once the reference returns to the admissible region.
+      </p>
+
+      <div class="columns is-centered is-vcentered mt-4">
+        <div class="column is-8">
+          <video autoplay controls muted loop playsinline width="100%" preload="metadata">
+            <source src="static/videos/SafetyExp_margin.mp4" type="video/mp4">
+          </video>
+          <p class="figure-caption"><em>Perception-safety experiment: NoCBF, standard CBF, and estimation-aware CBF under a safety-conflicting formation reference.</em></p>
         </div>
       </div>
 
       <p class="content mt-4">
-        In Stage 2, formation expansion drives the desired elevation angle into the unsafe region, causing the NoCBF baseline to violate safety constraints. Conversely, the proposed framework safely resolves this conflict by computing a minimally modified safe control input, strictly bounding the state within the perception safe region while sustaining accurate tracking of unconstrained states. Finally, in Stage 3, the safety conflict is removed, and both followers converge to their formation objectives.
+        The uncertainty margin also upper-bounds the barrier-value estimation error measured against OptiTrack across all evaluated samples. Its peaks follow increases in the EKF covariance and it contracts as the covariance decreases, providing adaptive constraint tightening rather than a fixed angular cushion.
       </p>
     </div>
   </section>
@@ -432,9 +444,9 @@
                 <span class="icon is-large has-text-success">
                   <i class="fas fa-eye fa-2x"></i>
                 </span>
-                <h4 class="title is-5 mt-3">Visibility is Guaranteed</h4>
+                <h4 class="title is-5 mt-3">Visibility Under Uncertainty</h4>
                 <p class="is-size-6">
-                  The CBF-QP safety filter enforces perception safety, ensuring that the leader remains within the follower's camera frustum at all times.
+                  The estimation-aware CBF-QP preserved leader visibility during yaw-modulated, safety-conflicting maneuvers, whereas the standard CBF and NoCBF lost visibility.
                 </p>
               </div>
             </div>
@@ -443,9 +455,9 @@
                 <span class="icon is-large has-text-success">
                   <i class="fas fa-crosshairs fa-2x"></i>
                 </span>
-                <h4 class="title is-5 mt-3">Tracking is Preserved</h4>
+                <h4 class="title is-5 mt-3">Accurate, Efficient Tracking</h4>
                 <p class="is-size-6">
-                  When visibility constraints are inactive, the nominal controller achieves stable formation tracking and convergence to the desired 3D-LFF reference.
+                  The distributed controller with the asynchronous EKF reduced tracking RMSE and computation time compared with IBVS, and scaled to 21 UAVs in simulation.
                 </p>
               </div>
             </div>
@@ -465,10 +477,10 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{santjoko2026perceptionaware3dlff,
+      <pre id="bibtex-code"><code>@article{santjoko2026frustumsafe3dlff,
   author  = {Santjoko, Immanuel R. and Suganda, Richie R. and Pan, Miao and Hu, Bin},
-  title   = {Distributed 3D Leader--Follower Formation Control with
-             Field-of-View Safety via Control Barrier Functions},
+  title   = {Dynamic Relative-Motion and Frustum-Safe Tracking
+             for Distributed 3D UAV Formations},
   journal = {Under Review},
   year    = {2026},
 }</code></pre>
